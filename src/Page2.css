@@ -1,0 +1,42 @@
+.page2 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+  height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: aliceblue;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(91, 134, 186, 1) 100%
+  );
+}
+.page2__QandA {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70%;
+  margin: 20px 0;
+  background-color: rgb(190, 213, 233);
+  border-radius: 20px;
+  padding: 10px;
+}
+.page2__question {
+  padding-bottom: 20px;
+  height: 10%;
+}
+.page2__answer {
+  min-height: 70%;
+  max-height: 70%;
+  overflow-y: scroll;
+  margin: 10px 20px;
+}
+.page2__ratingAndNext {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}

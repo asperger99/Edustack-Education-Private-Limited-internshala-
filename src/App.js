@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import "./App.css";
+import LandingPage from "./LandingPage";
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
+import {Page1} from "./Page1"
+import { UseStateValue } from "./StateProvider";
+import Page2 from "./Page2"
+import Page3 from "./Page3"
 
 function App() {
+  const [{ user }, dispatch] = UseStateValue();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+   
+      <Router>
+        <Switch>
+          <Route exact path="/" component= {!user?LandingPage:Page1} />
+          {/* <Route exact path="/" component= {Page1} /> */}
+          <Route exact path="/page2" component= {Page2} />
+          <Route exact path="/page3" component= {Page3} />
+       
+        </Switch>
+      </Router> 
+
     </div>
   );
 }
